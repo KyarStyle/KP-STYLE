@@ -526,6 +526,7 @@ video{
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    width: 100%; /* Asegura que el formulario ocupe todo el ancho */
 }
 
 /* Estilo de las etiquetas flotantes */
@@ -588,6 +589,33 @@ video{
 .input-formulario textarea:not(:placeholder-shown) + label {
     color: #4CAF50;
     top: -2rem; /* Mueve la etiqueta hacia arriba cuando el campo tiene texto */
+}
+
+/* Estilos para pantallas pequeñas (dispositivos móviles) */
+@media (max-width: 767px) {
+    .formulario {
+        padding: 1rem; /* Añadir un poco de espacio alrededor del formulario */
+    }
+
+    .input-formulario label {
+        font-size: 1.4rem; /* Ajusta el tamaño de la etiqueta en pantallas pequeñas */
+    }
+
+    .input-formulario input,
+    .input-formulario textarea {
+        font-size: 1.4rem; /* Ajusta el tamaño de la fuente dentro de los campos */
+        padding: 0.8rem; /* Menor padding en pantallas más pequeñas */
+    }
+
+    .input-formulario input::placeholder,
+    .input-formulario textarea::placeholder {
+        font-size: 1.4rem; /* Ajusta el tamaño del placeholder en pantallas pequeñas */
+    }
+
+    .btn-formulario input {
+        font-size: 1.4rem; /* Ajusta el tamaño del botón en pantallas pequeñas */
+        padding: 1rem 2rem; /* Ajusta el padding del botón */
+    }
 }
 
 
@@ -869,6 +897,8 @@ video{
     margin-right: 8px; /* Espaciado entre el icono y el texto */
     font-size: 1.4rem; /* Tamaño del icono */
 }
+
+
 
 
 
