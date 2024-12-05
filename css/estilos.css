@@ -426,71 +426,238 @@ video{
     padding-top: 5rem;
 }
 /*formulario contacto*/
-@media(min-width: 768px) {
-    .formulario-contacto{
-        display: flex;
-    }
-}
-.informacion-contacto{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.informacion-contacto, .formulario{
-    flex: 0 0 calc(50% - 1rem);
-}
-.informacion-contacto{
-    background-color: var(--oscuro);
-    padding: 2rem;
+/* Estilo general del formulario */
+.formulario {
+    background: #ffffff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 12px;
+    padding: 3rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease;
 }
 
-.informacion-contacto h3, .informacion-contacto p, .redes-sociales i{
-    color: var(--blanco);
-}
-.informacion-contacto h3{
-    font-size: 4rem;
-    font-family: var(--titulos);
+.formulario:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.informacion-contacto p{
-    font-size: 2.2rem;
-  
-}
-.informacion-contacto i{
-    margin-right: 1rem;
+
+/* Estilo para el mensaje centrado */
+/* Estilo para el mensaje centrado */
+.mensaje-contacto {
+    text-align: center;
+    margin-bottom: 2rem; /* Espaciado entre el mensaje y el formulario */
+    padding: 1rem;
 }
 
-.redes-sociales{
-    font-size: 3rem;
+.mensaje-contacto h2 {
+    font-size: 2.8rem; /* Tamaño más grande para un estilo elegante */
+    font-family: 'Playfair Display', serif; /* Estilo elegante y sofisticado */
+    color: #333;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.5;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 1px;
+    text-transform: capitalize; /* Capitaliza el texto para hacerlo más refinado */
 }
 
-.formulario{
-    padding: 5rem;
+/* Efecto suave para el texto */
+.mensaje-contacto h2 {
+    transition: all 0.3s ease-in-out;
 }
 
-.input-formulario label{
-    display: block;
-    font-size: 2rem;
-    font-family: var(--parrafos);
+.mensaje-contacto h2:hover {
+    color: #ed81fb; /* Cambia el color al pasar el mouse */
+    text-decoration: underline;
+}
+
+
+
+/* Títulos e información */
+.informacion-contacto {
+    background-color: #f7f7f7;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.informacion-contacto h3 {
+    font-size: 3.5rem;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
     margin-bottom: 1.5rem;
 }
 
-.input-formulario input, .input-formulario textarea{
+.informacion-contacto p {
+    font-size: 1.8rem;
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.informacion-contacto i {
+    color: #f988cc;
+    font-size: 2.5rem;
+    margin-right: 1rem;
+}
+
+.redes-sociales i {
+    font-size: 2.5rem;
+    margin: 0 0.5rem;
+    color: #ff81d9;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.redes-sociales i:hover {
+    transform: scale(1.2);
+    color: #333;
+}
+
+/* Estilos para los campos del formulario */
+/* Estilos para los campos de entrada */
+/* Contenedor del formulario */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Estilo de las etiquetas flotantes */
+.input-formulario {
+    position: relative;
+    margin-bottom: 2rem; /* Espaciado entre cada campo */
+}
+
+.input-formulario label {
+    font-size: 1.6rem;
+    font-family: 'Lora', serif; /* Tipografía elegante para las etiquetas */
+    color: #333;
+    position: absolute;
+    top: -1.5rem; /* Coloca la etiqueta arriba del cuadro de entrada */
+    left: 1.6rem; /* Alineación con el cuadro de entrada */
+    background-color: #fff; /* Fondo blanco para que se vea sobre el cuadro de entrada */
+    padding: 0 0.5rem;
+    transition: all 0.3s ease; /* Transición suave */
+    font-weight: 500;
+}
+
+/* Estilo de los campos de entrada */
+.input-formulario input,
+.input-formulario textarea {
     width: 100%;
-}
-.input-formulario input, .input-formulario textarea{
-    padding: 1rem 1.6rem;
+    padding: 1rem;
+    font-size: 1.6rem;
     border: 1px solid #e1e1e1;
-    border-radius: 5px;
+    border-radius: 8px;
     outline: none;
-    font-family: var(--parrafos);
+    font-family: 'Lora', serif;
+    background-color: #f9f9f9;
 }
-.input-formulario textarea{
-    height: 20rem;
-    resize:none;
+
+/* Efecto al hacer foco en los campos de entrada */
+.input-formulario input:focus,
+.input-formulario textarea:focus {
+    border-color: #f871d2;
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.2); /* Sombra suave para enfocar */
 }
+
+/* Efecto de la etiqueta al enfocar el campo */
+.input-formulario input:focus + label,
+.input-formulario textarea:focus + label {
+    color: #fd8bf7;
+    top: -2rem; /* Mueve la etiqueta hacia arriba cuando el campo está en foco */
+}
+
+/* Estilo para los textos de la etiqueta de los campos de entrada */
+.input-formulario input::placeholder,
+.input-formulario textarea::placeholder {
+    font-size: 1.6rem;
+    color: #aaa; /* Color suave para el placeholder */
+    font-family: 'Lora', serif;
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Mueve la etiqueta hacia arriba cuando el campo tiene texto o está enfocado */
+.input-formulario input:not(:placeholder-shown) + label,
+.input-formulario textarea:not(:placeholder-shown) + label {
+    color: #4CAF50;
+    top: -2rem; /* Mueve la etiqueta hacia arriba cuando el campo tiene texto */
+}
+
+
+
+
+/* Estilo para el botón de envío */
+.btn-formulario input[type="submit"] {
+    background-color: #fe89e1;
+    color: white;
+    padding: 1.5rem 3rem;
+    font-size: 2rem;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto;
+    margin-top: 2rem;
+}
+
+.btn-formulario input[type="submit"]:hover {
+    background-color: #fd92e1;
+    transform: scale(1.05);
+}
+
+/* Estilos para las redes sociales */
+.redes-sociales {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.redes-sociales i {
+    font-size: 2.5rem;
+    margin: 0 0.8rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.redes-sociales i:hover {
+    transform: scale(1.2);
+    color: #333;
+}
+
+/* Medios de pantalla */
+@media(max-width: 768px) {
+    .formulario {
+        padding: 2rem;
+    }
+
+    .informacion-contacto {
+        padding: 1.5rem;
+    }
+
+    .informacion-contacto h3 {
+        font-size: 3rem;
+    }
+
+    .input-formulario label {
+        font-size: 1.6rem;
+    }
+
+    .input-formulario input, .input-formulario textarea {
+        padding: 1rem 1.2rem;
+        font-size: 1.5rem;
+    }
+
+    .btn-formulario input[type="submit"] {
+        padding: 1rem 2rem;
+        font-size: 1.6rem;
+    }
+}
+
 
 .pie-pagina{
     margin-top: 5rem;
