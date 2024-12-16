@@ -323,33 +323,107 @@ video{
         flex-wrap:wrap;
     }
 }
-.platillo{
+.platillo {
     flex: 0 0 calc(33.3% - 1rem);
-    border: 1px solid #e1e1e1;
-    padding: 2rem;
-    border-radius: 5px;
+    background-color: var(--blanco);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px var(--sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
 }
-.platillo h2{
+
+.platillo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px var(--sombra);
+}
+
+.platillo img {
+    width: 90%; /* Tamaño reducido de la imagen */
+    height: auto;
+    border-radius: 5px;
+    margin: 0 auto 1rem auto; /* Centrado de la imagen */
+    display: block;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.platillo:hover img {
+    transform: scale(1.03);
+    opacity: 0.95;
+}
+
+.platillo h2 {
     text-align: center;
+    font-size: 1.6rem;
+    color: var(--gris-oscuro);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
 }
-.platillo p{
-    font-size: 1.8rem;
+
+.platillo p {
+    font-size: 1.4rem;
+    color: var(--gris-oscuro);
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 1rem;
 }
-.precio{
+
+.precio {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5rem;
 }
-.precio p{
+
+.precio p {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    color: var(--rojo);
+    margin-bottom: 1rem;
 }
-.precio button{
-    padding:1rem;
-    border-radius: 5px;
+
+.precio button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
     border: none;
     background-color: var(--rojo);
     color: var(--blanco);
-    height: 3.8rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.precio button:hover {
+    background-color: var(--gris-oscuro);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+    .platillo {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .platillo {
+        flex: 0 0 calc(100% - 1rem);
+    }
+
+    .platillo p {
+        font-size: 1.3rem;
+    }
+
+    .precio p {
+        font-size: 1.6rem;
+    }
+
+    .precio button {
+        font-size: 1rem;
+    }
 }
 .separador{
     background-image: url('https://erestrendy.com/wp-content/uploads/2024/05/Rutina.jpg');
@@ -526,6 +600,7 @@ video{
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    width: 100%; /* Asegura que el formulario ocupe todo el ancho */
 }
 
 /* Estilo de las etiquetas flotantes */
@@ -588,6 +663,33 @@ video{
 .input-formulario textarea:not(:placeholder-shown) + label {
     color: #4CAF50;
     top: -2rem; /* Mueve la etiqueta hacia arriba cuando el campo tiene texto */
+}
+
+/* Estilos para pantallas pequeñas (dispositivos móviles) */
+@media (max-width: 767px) {
+    .formulario {
+        padding: 1rem; /* Añadir un poco de espacio alrededor del formulario */
+    }
+
+    .input-formulario label {
+        font-size: 1.4rem; /* Ajusta el tamaño de la etiqueta en pantallas pequeñas */
+    }
+
+    .input-formulario input,
+    .input-formulario textarea {
+        font-size: 1.4rem; /* Ajusta el tamaño de la fuente dentro de los campos */
+        padding: 0.8rem; /* Menor padding en pantallas más pequeñas */
+    }
+
+    .input-formulario input::placeholder,
+    .input-formulario textarea::placeholder {
+        font-size: 1.4rem; /* Ajusta el tamaño del placeholder en pantallas pequeñas */
+    }
+
+    .btn-formulario input {
+        font-size: 1.4rem; /* Ajusta el tamaño del botón en pantallas pequeñas */
+        padding: 1rem 2rem; /* Ajusta el padding del botón */
+    }
 }
 
 
@@ -658,58 +760,146 @@ video{
     }
 }
 
-
-.pie-pagina{
+/* Estilo principal del pie de página */
+.pie-pagina {
     margin-top: 5rem;
-    background-color: rgb(29, 25, 25);
+    background-color: #2c3e50; /* Un azul oscuro sofisticado */
     padding: 5rem;
+    background-image: url("https://cdn.pixabay.com/photo/2017/11/06/11/43/background-2924842_960_720.png");
+    background-size: cover;
+    background-position: center;
+    border-top: 5px solid #fd92e1; /* Línea roja para dar un toque festivo */
 }
-@media(min-width:768px){
-    .contenedor-piepagina{
+
+/* Diseño responsivo para mayor elegancia */
+@media (min-width: 768px) {
+    .contenedor-piepagina {
         display: flex;
         justify-content: space-between;
+        gap: 2rem;
     }
-
 }
-.info{
+
+/* Estilo para los bloques de información */
+.info {
     flex: 0 0 calc(25% - 1rem);
     margin-bottom: 2rem;
-}
-.info h3, .info p{
-    color: var(--blanco);
     text-align: center;
-}
-.info h3{
-    font-size: 2.2rem;
-}
-.info p{
-    font-size: 1.8rem;
 }
 
-.redes-pie{
-    text-align: center;
+/* Títulos con un toque navideño */
+.info h3 {
+    font-size: 2.2rem;
+    color: #111010; /* Rojo navideño */
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    position: relative;
 }
-.info input[type="email"]{
-    font-family: var(--parrafos);
+.info h3:before {
+    content: "❄️";
+    position: absolute;
+    left: -20px;
+    color: #ecf0f1;
+}
+.info h3:after {
+    content: "❄️";
+    position: absolute;
+    right: -20px;
+    color: #ecf0f1;
+}
+
+/* Estilo para el texto */
+.info p {
+    font-size: 1.6rem;
+    color: #ecf0f1; /* Blanco sutil */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Redes sociales */
+.redes-pie {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.redes-pie i {
+    font-size: 2.5rem;
+    color: #ecf0f1;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.redes-pie i:hover {
+    color: #e74c3c; /* Rojo navideño */
+    transform: scale(1.2);
+}
+
+/* Input de correo y botón */
+.info input[type="email"] {
+    font-family: 'Roboto', sans-serif;
     display: inline-block;
     margin-bottom: 1rem;
     padding: 1rem;
     border-radius: 5px;
     outline: none;
     width: 100%;
+    border: 1px solid #bdc3c7;
+    background-color: #ecf0f1;
+    font-size: 1.4rem;
 }
 
-.info input[type="submit"]{
-    padding: .5rem 2rem;
-    font-size: 1.8rem;
-    border-radius: 0;
+.info input[type="submit"] {
+    padding: 0.8rem 2rem;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    background-color: #e74c3c;
+    color: #ecf0f1;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
-.footer{
+.info input[type="submit"]:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Estilo del footer */
+.footer {
     text-align: center;
-    background-color: var(--oscuro);
-    color: var(--blanco);
+    background-color: #34495e; /* Gris oscuro */
+    color: #ecf0f1;
     padding: 2rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decoración navideña en el footer */
+.footer:before {
+    content: "🎄";
+    position: absolute;
+    left: -20px;
+    font-size: 4rem;
+    top: -20px;
+    color: #e74c3c;
+    animation: spin 10s linear infinite;
+}
+.footer:after {
+    content: "🎁";
+    position: absolute;
+    right: -20px;
+    font-size: 4rem;
+    bottom: -20px;
+    color: #e74c3c;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 
@@ -869,6 +1059,165 @@ video{
     margin-right: 8px; /* Espaciado entre el icono y el texto */
     font-size: 1.4rem; /* Tamaño del icono */
 }
+
+
+
+
+
+
+/* Estilo general del platillo de promoción */
+.platillo[data-platillo="promo-graduacion"] {
+    background-color: #f8f8f8; /* Fondo claro y elegante */
+    border-radius: 10px; /* Bordes suaves */
+    overflow: hidden; /* Asegura que las imágenes no salgan del contorno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+    position: relative;
+    padding: 20px;
+    max-width: 700px;
+    margin: 30px auto; /* Centra el contenido */
+    font-family: 'Arial', sans-serif; /* Tipografía limpia y moderna */
+}
+
+/* Título de la promoción */
+.platillo[data-platillo="promo-graduacion"] h2 {
+    font-size: 3rem; /* Título destacado */
+    font-weight: bold;
+    color: #2e3d49; /* Color elegante y serio */
+    text-align: center;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* Estilo para las imágenes */
+.platillo[data-platillo="promo-graduacion"] .imagenes {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.platillo[data-platillo="promo-graduacion"] .imagenes img {
+    width: 48%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Animación suave en el hover */
+}
+
+.platillo[data-platillo="promo-graduacion"] .imagenes img:hover {
+    transform: scale(1.05); /* Efecto de zoom cuando se pasa el cursor */
+}
+
+/* Descripción de la promoción */
+.platillo[data-platillo="promo-graduacion"] p {
+    font-size: 1.6rem;
+    color: #333; /* Gris oscuro para un contraste más suave */
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1.7;
+    font-family: 'Helvetica Neue', sans-serif; /* Tipografía moderna y limpia */
+    font-weight: 300; /* Ligero para mayor legibilidad */
+}
+
+/* Estilo para el precio */
+.platillo[data-platillo="promo-graduacion"] .precio {
+    background-color: #f3f5f7; /* Fondo sutil para resaltar sin sobrecargar */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo del texto dentro del precio */
+.platillo[data-platillo="promo-graduacion"] .precio p {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #e03e72; /* Color elegante y sofisticado */
+    margin: 0;
+    font-family: 'Montserrat', sans-serif; /* Fuente moderna y profesional */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Línea decorativa debajo de la promoción */
+.platillo[data-platillo="promo-graduacion"]:after {
+    content: ''; /* Añade un toque visual */
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fd92e1; /* Un rosa suave que complementa el diseño */
+    margin-top: 25px;
+    border-radius: 5px; /* Bordes suavizados para una apariencia más elegante */
+}
+
+/* Detalles adicionales si es necesario, como para los títulos o headers */
+.platillo[data-platillo="promo-graduacion"] h2 {
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #333; /* Gris oscuro */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Agregar animación sutil para hacerla más dinámica */
+.platillo[data-platillo="promo-graduacion"] .precio p {
+    transition: all 0.3s ease;
+}
+
+.platillo[data-platillo="promo-graduacion"] .precio p:hover {
+    color: #ff1b72; /* Color de acento más brillante en hover */
+    transform: translateY(-5px); /* Efecto de desplazamiento al pasar el ratón */
+}
+
+
+/*boton graduacion*/
+
+/* Estilo para el botón de graduación */
+.promo-graduacion.btn-verde {
+    background-color: #0066cc; /* Azul elegante, tono de graduación */
+    color: #fff; /* Texto blanco para contraste */
+    font-size: 1.1rem; /* Tamaño de fuente más profesional */
+    font-weight: 600; /* Peso de fuente medio, elegante */
+    padding: 10px 20px; /* Espaciado del botón para que sea cómodo */
+    border-radius: 15px; /* Bordes suaves y redondeados */
+    border: 2px solid #005bb5; /* Borde del mismo tono para un look limpio */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase; /* Texto en mayúsculas para un toque más serio */
+    transition: all 0.3s ease; /* Transición suave para efectos de hover */
+    cursor: pointer; /* Hace que el cursor cambie a mano */
+}
+
+.promo-graduacion.btn-verde:hover {
+    background-color: #005bb5; /* Azul más oscuro al pasar el mouse */
+    border-color: #004a99; /* Borde más oscuro para el hover */
+    transform: translateY(-2px); /* Efecto de elevación suave */
+}
+
+.promo-graduacion.btn-verde:before {
+    content: "\f19d"; /* Código de FontAwesome para el ícono de graduación (birrete) */
+    font-family: 'FontAwesome'; /* Usando FontAwesome para el ícono */
+    font-size: 1.2rem; /* Tamaño del icono */
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+/* Mejorar el texto dentro del botón */
+.promo-graduacion.btn-verde span {
+    font-family: 'Arial', sans-serif; /* Fuente simple, profesional */
+}
+
+/* Estilos globales de FontAwesome (si aún no has incluido FontAwesome, añádelo en el head del HTML) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
 
 
 
