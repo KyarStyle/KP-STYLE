@@ -13,6 +13,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -76,6 +78,7 @@
             <button class="pizza btn btn-verde">Maquillaje</button>
             <button class="postres btn btn-verde">Laceado</button>
             <button class="promo btn btn-verde">Promos Navideñas</button>
+            <button class="promo-graduacion btn btn-verde">Promos para Graduación</button>
         </div>
         <div class="platillos">
             <div class="platillo" data-platillo="ensalada">
@@ -100,7 +103,7 @@
                 </div>
             </div>
             <div class="platillo" data-platillo="ensalada">
-                <img data-src="Imagen de WhatsApp 2024-10-05 a las 21.35.13_ea091561.jpg" alt="ensalada">
+                <img data-src="assets\img\Imagen de WhatsApp 2024-10-05 a las 21.35.13_ea091561.jpg" alt="ensalada">
                 <h2>Efecto Marmoleado</h2>
                 <p>El efecto marmoleado en uñas es una técnica decorativa que imita el aspecto del mármol. Se logra mezclando suavemente diferentes colores de esmalte o gel sobre la uña, creando vetas y patrones únicos con ayuda de un pincel fino o una herramienta de punteado. 
                     Este diseño se puede sellar con una capa de brillo para mayor duración y acabado.</p>
@@ -245,6 +248,31 @@
                     <p>30 SOLES</p>
                 </div>
             </div>
+
+            <div class="platillo" data-platillo="promo-graduacion" style="position: relative;">
+                <h2>Oferta especial para Promoción</h2>
+                <div class="imagenes">
+                    <img data-src="https://admin.chikaschic.com/wp-content/uploads/2018/06/Vista3Graduacion.jpg" alt="Promo Graduación 1">
+                    <img data-src="https://espacioscreativo.com/wp-content/uploads/2023/09/peinado-y-maquillaje-para-graduacion-2.jpg" alt="Promo Graduación 2">
+                </div>
+                <p>🎓 Oferta para tu Promoción: Peinado + Maquillaje natural/sutil . ¡Haz de tu día un recuerdo inolvidable! 💫</p>
+                <div class="precio">
+                    <p>80 SOLES</p>
+                </div>
+            </div>
+
+            <div class="platillo" data-platillo="promo-graduacion" style="position: relative;">
+                <h2>Oferta Especial para Graduación</h2>
+                <div class="imagenes">
+                    <img data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpfiX9UO5UyHh70fepAyI5bEv6R28CFsT6Fw&s" alt="Promo Graduación 1">
+                    <img data-src="https://i.pinimg.com/564x/b1/9e/cd/b19ecd2f218ab481c9ac56a65b4369c9.jpg" alt="Promo Graduación 2">
+                </div>
+                <p>🎓 Oferta para tu graduación: Peinado + Maquillaje. ¡Luce espectacular en el día que marca el inicio de tus sueños!💫</p>
+                <div class="precio">
+                    <p>110 SOLES</p>
+                </div>
+            </div>
+            
             
             
             
@@ -353,6 +381,12 @@
                 // Redirige a WhatsApp usando location.href
                 window.location.href = urlWhatsApp;
             });
+
+
+
+
+
+            
         </script>
         
         
@@ -361,39 +395,46 @@
         
         
     </div>
-    <div class="pie-pagina ">
+
+    <div class="pie-pagina">
         <div class="contenedor-piepagina contenedor">
-            <div class="info">
-                <h3>Dirección</h3>
-                <p>Retes</p>
+          <div class="info">
+            <h3>🎄 Dirección</h3>
+            <p>Retes</p>
+          </div>
+          <div class="info">
+            <h3>🎅 Días de Trabajo</h3>
+            <p>Lunes - Domingo</p>
+            <p><i class="fas fa-phone-alt"></i> 936075917</p>
+          </div>
+          <div class="info">
+            <h3>⏰ Horarios</h3>
+            <p>Lunes - Domingo 7am - 11pm</p>
+            <div class="redes-sociales redes-pie">
+              <i class="fab fa-facebook-square"></i>
+              <i class="fab fa-twitter-square"></i>
+              <i class="fab fa-instagram"></i>
             </div>
-            <div class="info">
-                <h3>Días de trabajo</h3>
-                <p>LUNES-DOMINGO</p>
-                <p>936075917</p>
-            </div>
-            <div class="info">
-                <h3>Horarios</h3>
-                <p>Lunes - Domingo 7am - 11pm</p>
-                <div class="redes-sociales redes-pie">
-                    <i class="fab fa-facebook-square"></i>
-                    <i class="fab fa-twitter-square"></i>
-                    <i class="fab fa-instagram"></i>
-                </div>
-            </div>
-            <div class="info">
-                <h3>Noticias</h3>
-                <p>suscribete para recibir más noticias</p>
-                <input type="email" placeholder="Tu correo">
-                <input type="submit" class="btn btn-verde" value="Suscribirse">
-            </div>
+          </div>
+          <div class="info">
+            <h3>📰 Noticias</h3>
+            <p>Escribeme para recibir novedades y promociones navideñas</p>
+            <input type="email" id="email" placeholder="Detalla tu Servicio">
+            <input type="submit" class="btn btn-navidad" value="Enviar mensaje" id="enviarMensaje">
         </div>
-    </div>
-    <footer class="footer">
-        <p>Separa tu cita &copy; Estamos para atenderlos</p>
-    </footer>
+        
+        </div>
+      </div>
+      <footer class="footer">
+        <p>✨ Reserva tu cita &copy; Estamos para atenderte con alegría navideña 🎁</p>
+      </footer>
+      
     <script src="js/app.js"></script>
+
+    
+    
 
 </body>
 
 </html>
+
