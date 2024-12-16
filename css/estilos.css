@@ -323,33 +323,107 @@ video{
         flex-wrap:wrap;
     }
 }
-.platillo{
+.platillo {
     flex: 0 0 calc(33.3% - 1rem);
-    border: 1px solid #e1e1e1;
-    padding: 2rem;
-    border-radius: 5px;
+    background-color: var(--blanco);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px var(--sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
 }
-.platillo h2{
+
+.platillo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px var(--sombra);
+}
+
+.platillo img {
+    width: 90%; /* Tamaño reducido de la imagen */
+    height: auto;
+    border-radius: 5px;
+    margin: 0 auto 1rem auto; /* Centrado de la imagen */
+    display: block;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.platillo:hover img {
+    transform: scale(1.03);
+    opacity: 0.95;
+}
+
+.platillo h2 {
     text-align: center;
+    font-size: 1.6rem;
+    color: var(--gris-oscuro);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
 }
-.platillo p{
-    font-size: 1.8rem;
+
+.platillo p {
+    font-size: 1.4rem;
+    color: var(--gris-oscuro);
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 1rem;
 }
-.precio{
+
+.precio {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5rem;
 }
-.precio p{
+
+.precio p {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    color: var(--rojo);
+    margin-bottom: 1rem;
 }
-.precio button{
-    padding:1rem;
-    border-radius: 5px;
+
+.precio button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
     border: none;
     background-color: var(--rojo);
     color: var(--blanco);
-    height: 3.8rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.precio button:hover {
+    background-color: var(--gris-oscuro);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+    .platillo {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .platillo {
+        flex: 0 0 calc(100% - 1rem);
+    }
+
+    .platillo p {
+        font-size: 1.3rem;
+    }
+
+    .precio p {
+        font-size: 1.6rem;
+    }
+
+    .precio button {
+        font-size: 1rem;
+    }
 }
 .separador{
     background-image: url('https://erestrendy.com/wp-content/uploads/2024/05/Rutina.jpg');
