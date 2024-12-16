@@ -26,8 +26,8 @@ const configurarEventos = () => {
     btnPromo.addEventListener('touchstart', mostrarPromos);
 
     // Agregar evento para el botón de Promos para Graduación
+    btnPromo.addEventListener('click', mostrarPromos);
     btnPromoGraduacion.addEventListener('click', mostrarPromosGraduacion);
-    btnPromoGraduacion.addEventListener('touchstart', mostrarPromosGraduacion);
 };
 
 // Función para abrir el menú de navegación
@@ -141,19 +141,28 @@ const mostrarPromos = (e) => {
     contenedorPlatillos.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 
-// Mostrar promociones para graduación (función separada)
+// Función para mostrar promociones para graduación
 const mostrarPromosGraduacion = (e) => {
-    e.preventDefault(); // Evitar el comportamiento por defecto del botón
+    e.preventDefault(); // Evitar comportamiento por defecto del botón
 
     // Filtrar los platillos que tienen el atributo data-platillo="promo-graduacion"
-    const promosGraduacion = platillosArreglo.filter((platillo) => platillo.getAttribute('data-platillo') === 'promo-graduacion');
+    const promosGraduacion = platillosArreglo.filter(
+        (platillo) => platillo.getAttribute('data-platillo') === 'promo-graduacion'
+    );
 
     // Limpiar el contenedor actual y mostrar solo las promociones para graduación
     limpiarHtml(contenedorPlatillos);
     promosGraduacion.forEach((promoGraduacion) => contenedorPlatillos.appendChild(promoGraduacion));
 
     // Asegurar que el contenedor esté visible en móviles
-    contenedorPlatillos.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (promosGraduacion.length > 0) {
+        contenedorPlatillos.scrollIntoView({
+            behavior: 'smooth', // Desplazamiento suave
+            block: 'start', // Asegurar que la parte superior del contenedor esté visible
+        });
+    } else {
+        console.warn('No se encontraron promociones para graduación.');
+    }
 };
 
 // Función para limpiar el contenedor de platillos
@@ -162,6 +171,10 @@ const limpiarHtml = (contenedor) => {
         contenedor.removeChild(contenedor.firstChild); // Eliminar todos los elementos hijos
     }
 };
+// Función para asegurar que las imágenes se carguen correctamente
+imagenes.forEach((imagen) => {
+    observer.observe(imagen);
+});
 
 
 
